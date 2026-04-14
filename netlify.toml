@@ -1,0 +1,14 @@
+[build]
+  # 指定 Next.js 静态导出的目录
+  publish = "out"
+  # 指定构建命令
+  command = "npm run build"
+
+# 处理 SPA 路由或 Next.js 导出后的重定向
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+# 如果需要处理某些特定路径的重定向，可以在这里添加
+# 例如：将旧路径重定向到新路径
