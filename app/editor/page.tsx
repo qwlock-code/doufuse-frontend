@@ -5,7 +5,7 @@ import { useEditorStore } from '@/stores/editorStore'
 import { DOUFUSE_COLORS, COLOR_CATEGORIES } from '@/lib/colors'
 import { 
   MousePointer, 
-  Paintbucket, 
+  Paintbrush, 
   Eraser, 
   Undo2, 
   Redo2, 
@@ -19,7 +19,7 @@ import {
 
 const tools = [
   { id: 'brush', icon: MousePointer, label: 'Brush' },
-  { id: 'fill', icon: Paintbucket, label: 'Fill' },
+  { id: 'fill', icon: Paintbrush, label: 'Fill' },
   { id: 'eraser', icon: Eraser, label: 'Eraser' },
 ] as const
 
