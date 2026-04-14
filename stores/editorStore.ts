@@ -27,6 +27,7 @@ const initialState: EditorState = {
   showGrid: true,
   history: [{}],
   historyIndex: 0,
+  historyLength: 1,
 }
 
 export const useEditorStore = create<EditorStore>((set, get) => ({
@@ -110,7 +111,8 @@ export const useEditorStore = create<EditorStore>((set, get) => ({
       const newIndex = historyIndex - 1
       set({ 
         gridData: history[newIndex], 
-        historyIndex: newIndex 
+        historyIndex: newIndex,
+        historyLength: history.length
       })
     }
   },
@@ -121,7 +123,8 @@ export const useEditorStore = create<EditorStore>((set, get) => ({
       const newIndex = historyIndex + 1
       set({ 
         gridData: history[newIndex], 
-        historyIndex: newIndex 
+        historyIndex: newIndex,
+        historyLength: history.length
       })
     }
   },
@@ -137,7 +140,8 @@ export const useEditorStore = create<EditorStore>((set, get) => ({
     
     set({ 
       history: newHistory, 
-      historyIndex: newHistory.length - 1 
+      historyIndex: newHistory.length - 1,
+      historyLength: newHistory.length 
     })
   },
 

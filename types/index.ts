@@ -96,4 +96,5 @@ export type EditorState = {
   showGrid: boolean
   history: GridData[]
   historyIndex: number
+  historyLength: number
 }
