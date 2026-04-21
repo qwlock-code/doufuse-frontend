@@ -1,6 +1,3 @@
-'use client'
-
-import { useParams, useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, Heart, MessageCircle, Download, Share2 } from 'lucide-react'
 
@@ -11,10 +8,16 @@ const samplePatterns: Record<string, any> = {
   '3': { id: 3, name: 'Flower Garden', author: 'ArtisticAmy', likes: 156, comments: 5, color: '#22C55E' },
 }
 
-export default function PatternDetailPage() {
-  const params = useParams()
-  const router = useRouter()
-  const pattern = samplePatterns[params.id as string]
+export async function generateStaticParams() {
+  return [
+    { id: '1' },
+    { id: '2' },
+    { id: '3' },
+  ]
+}
+
+export default function PatternDetailPage({ params }: { params: { id: string } }) {
+  const pattern = samplePatterns[params.id]
 
   if (!pattern) {
     return (
